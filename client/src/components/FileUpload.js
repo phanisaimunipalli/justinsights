@@ -183,8 +183,8 @@ const FileUpload = () => {
             </TableContainer>
             <br></br>
             <p className="textCenter">
-              Note: MinBalance, MaxBalance, and EndingBalance at the beginning
-              of the month are considered as 0.
+              Note: MaxBalance and EndingBalance at the beginning of the month
+              are considered as 0 but minBalance is taken as the Day 1 Balance.
             </p>
           </div>
         </>

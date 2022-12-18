@@ -22,7 +22,7 @@ function evalTransactions(res, file) {
     .on("error", (error) => console.error(error))
     .on("data", (row) => {
       if (row.Amount !== "" && row.Date !== "" && row.CustomerId !== "") {
-        console.log(row);
+        // console.log(row);
         //each row can be written to db
         rows.push(row);
       }
@@ -55,29 +55,29 @@ function evalTransactions(res, file) {
         console.log("init minBalance: ", minBalance);
 
         for (let each of map.values()) {
-          console.log("Going through CustomerId: ", each.CustomerId);
-          console.log("current amount: ", each.Amount);
+          // console.log("Going through CustomerId: ", each.CustomerId);
+          // console.log("current amount: ", each.Amount);
 
           var currAmount = Number(each.Amount);
           totalToday = totalToday + currAmount;
-          console.log("endingBalance: ", totalToday);
+          // console.log("endingBalance: ", totalToday);
 
           if (Number(totalToday) < Number(minBalance)) {
             minBalance = totalToday;
-            console.log("minBalance: ", minBalance);
+            // console.log("minBalance: ", minBalance);
           }
           if (Number(totalToday) > Number(maxBalance)) {
             maxBalance = totalToday;
-            console.log("maxBalance: ", maxBalance);
+            // console.log("maxBalance: ", maxBalance);
           }
         }
-        console.log("minBalance: ", minBalance);
-        console.log("maxBalance: ", maxBalance);
-        console.log("endingBalance: ", totalToday);
+        // console.log("minBalance: ", minBalance);
+        // console.log("maxBalance: ", maxBalance);
+        // console.log("endingBalance: ", totalToday);
         rowTrans.push(minBalance);
         rowTrans.push(maxBalance);
         rowTrans.push(totalToday);
-        console.log("rowTrans: ", rowTrans);
+        // console.log("rowTrans: ", rowTrans);
 
         result[map.values().next().value.CustomerId] = {
           cid: map.values().next().value.CustomerId,
@@ -86,21 +86,14 @@ function evalTransactions(res, file) {
           endingBalance: totalToday,
         };
 
-        // result[map.values().next().value.CustomerId] = {
-        //   minBalance: minBalance,
-        //   maxBalance: maxBalance,
-        //   endingBalance: totalToday,
-        // };
-
         console.log("result: ", result);
-        console.log("----------");
+        // console.log("----------");
       }
       res.json({
         fileName: file.name,
         filePath: `/uploads/${file.name}`,
         result: result,
       });
-      // return res.status(200).json({ result: result });
     });
 }
 
