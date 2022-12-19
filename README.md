@@ -7,15 +7,15 @@
 - [Just Insights](#justinsights)
   - [Table of contents](#table-of-contents)
   - [Points to Note](#points-to-note)
-  - [How to Use?](#how-to-use?)
-  - [What is the Tech Stack?](#what-is-the-tech-stack?)
-  - [How to setup in local?](#how-to-setup-in-local?)
+  - [How to Use?](#how-to-use)
+  - [What is the Tech Stack?](#what-is-the-tech-stack)
+  - [How to setup in local?](#how-to-setup-in-local)
   - [Screenshots](#screenshots)
   - [Contact](#contact)
 
 ## How to Use?
 
-- Upload a [CSV](/data.csv) file from the React UI and then /upload POST API will be called in backend (server.js).
+- Upload a [CSV](/files/data.csv) file from the React UI and then /upload POST API will be called in backend (server.js).
 - If there is no issue, this file is stored in public/uploads/ or else an error message is throwed back to UI.
 - There is a progress-bar included to track the upload percentage along with a message status that can be dismissable.
 
@@ -49,7 +49,8 @@ curl --location --request POST 'http://localhost:5000/upload' \
 
 ## Screenshots
 
-![Example screenshot](./img/screen-shot.png).
+![Demo](/files/justinsightsdemo.gif).
+![Example screenshot](/files/insights.png).
 
 ## Contact
 
