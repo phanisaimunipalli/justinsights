@@ -45,7 +45,10 @@ curl --location --request POST 'http://localhost:5000/upload' \
 
 ## How to setup in local?
 
-- `npm run dev` runs the front and backend simultaneously in development mode. It will open [http://localhost:3000](http://localhost:3000) to view in browser. Any code changes will automatically reload the browser.
+- Do `npm install` once you are able to download.
+- Go to `client` folder and again run `npm install` for UI.
+- Now `npm run dev` runs the frontend and backend simultaneously by using concurrently library in development mode. It will open [http://localhost:3000](http://localhost:3000) to view in browser. Any code changes in UI will reload the browser automatically.
+- You can also run frontend and backend in two different consoles.
 
 ## Screenshots
 
