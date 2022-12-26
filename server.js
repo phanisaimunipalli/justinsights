@@ -53,14 +53,22 @@ function evalTransactions(res, file) {
         maxBalance = 0;
         totalToday = 0;
         console.log("init minBalance: ", minBalance);
-
+        let dates = [];
         for (let each of map.values()) {
           // console.log("Going through CustomerId: ", each.CustomerId);
-          // console.log("current amount: ", each.Amount);
+          console.log("current each: ", each);
 
           var currAmount = Number(each.Amount);
           totalToday = totalToday + currAmount;
           // console.log("endingBalance: ", totalToday);
+
+          // passing parameters not in date format
+          var actualDate =
+            each.Date.substring(0, 3) + each.Date.substring(6, 10);
+          console.log("actualDate: ", actualDate);
+          // rowTrans.push("date3:", date3);
+          dates.push(actualDate);
+          // console.log("dates: ", dates);
 
           if (Number(totalToday) < Number(minBalance)) {
             minBalance = totalToday;
@@ -81,6 +89,7 @@ function evalTransactions(res, file) {
 
         result[map.values().next().value.CustomerId] = {
           cid: map.values().next().value.CustomerId,
+          monthYear: dates[0],
           minBalance: minBalance,
           maxBalance: maxBalance,
           endingBalance: totalToday,

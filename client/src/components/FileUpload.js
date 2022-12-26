@@ -89,7 +89,7 @@ const FileUpload = () => {
         rows.push(
           createData(
             resultData[key].cid,
-            "11/2022",
+            resultData[key].monthYear,
             resultData[key].minBalance,
             resultData[key].maxBalance,
             resultData[key].endingBalance
